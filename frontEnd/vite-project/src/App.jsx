@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import video from "./assets/synthCityBg.mp4";
 import { BoomBox } from "./components/boombox.jsx";
 import FacialRecModal from "./components/FacialRec/FacialRecModal";
+import "./App.scss";
+import "./index.css";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +11,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsOpen(true);
-      console.log(isOpen)
+      console.log(isOpen);
     }, 1000);
   }, []);
 
@@ -18,7 +20,6 @@ function App() {
       <video className="fullscreen-video" autoPlay muted loop preload="auto">
         <source src={video} type="video/mp4" />
       </video>
-
       <BoomBox />
       <FacialRecModal open={isOpen} />
     </div>
